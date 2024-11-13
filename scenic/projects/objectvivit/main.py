@@ -25,7 +25,7 @@ from scenic.projects.objectvivit import model
 from scenic.projects.objectvivit import trainer
 # pylint: disable=unused-import
 import scenic.projects.objectvivit.datasets
-from scenic.train_lib import train_utils
+from scenic.train_lib_deprecated import train_utils
 
 FLAGS = flags.FLAGS
 

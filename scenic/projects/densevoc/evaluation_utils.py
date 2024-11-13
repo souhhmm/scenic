@@ -30,7 +30,7 @@ from scenic.dataset_lib import dataset_utils
 from scenic.projects.baselines.centernet import train_utils as centernet_train_utils
 from scenic.projects.densevoc import densevoc_evaluator
 from scenic.projects.densevoc import vidstg_evaluator
-from scenic.train_lib import train_utils
+from scenic.train_lib_deprecated import train_utils
 
 
 def eval_step(

@@ -39,10 +39,10 @@ from scenic.projects.baselines.deformable_detr import coco_eval
 from scenic.projects.baselines.deformable_detr import evaluate as ddetr_eval
 from scenic.projects.baselines.deformable_detr.model import DeformableDETRModel
 from scenic.projects.baselines.detr import train_utils as detr_train_utils
-from scenic.train_lib import pretrain_utils
-from scenic.train_lib import train_utils
-from scenic.train_lib.train_utils import PyTree
-from scenic.train_lib.train_utils import TrainState
+from scenic.train_lib_deprecated import pretrain_utils
+from scenic.train_lib_deprecated import train_utils
+from scenic.train_lib_deprecated.train_utils import PyTree
+from scenic.train_lib_deprecated.train_utils import TrainState
 
 RngType = Union[jnp.ndarray, Mapping]
 InputSpec = Sequence[Union[Tuple[Tuple[int, ...], jnp.dtype], Tuple[int, ...],

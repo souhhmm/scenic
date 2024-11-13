@@ -12,10 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-"""Training script with transfer learning utilities."""
+"""Training Script."""
 
 import functools
-from typing import Any, Callable, Dict, Iterator, Tuple, Optional, Type
+from typing import Any, Callable, Dict, Tuple, Optional, Type
 
 from absl import logging
 from clu import metric_writers
@@ -33,12 +33,9 @@ import numpy as np
 import optax
 from scenic.dataset_lib import dataset_utils
 from scenic.model_lib.base_models import base_model
-from scenic.train_lib import lr_schedules
-from scenic.train_lib import optimizers
-from scenic.train_lib import pretrain_utils
-from scenic.train_lib import train_utils
-from scenic.train_lib.transfer import fewshot_utils
-from scenic.train_lib.transfer import linear_probe_utils
+from scenic.train_lib_deprecated import lr_schedules
+from scenic.train_lib_deprecated import optimizers
+from scenic.train_lib_deprecated import train_utils
 
 # Aliases for custom types:
 Batch = Dict[str, jnp.ndarray]
@@ -88,7 +85,7 @@ def train_step(
       jax.host_callback.
 
   Returns:
-    Updated state of training and computed metrics for logging.
+    Updated state of training and computed metrics and some training logs.
   """
   training_logs = {}
   new_rng, rng = jax.random.split(train_state.rng)
@@ -131,6 +128,7 @@ def train_step(
 
   if config.get('max_grad_norm') is not None:
     grad = clip_grads(grad, config.max_grad_norm)
+
   tx = train_state.tx
   if tx is None:
     raise ValueError('train_state.tx, the Gradient Transformation, is None')
@@ -150,6 +148,7 @@ def train_step(
   training_logs['learning_rate'] = lr_fn(jnp.asarray([train_state.global_step]))
 
   metrics = metrics_fn(logits, batch)
+
   new_train_state = train_state.replace(  # pytype: disable=attribute-error
       global_step=train_state.global_step + 1,
       opt_state=new_opt_state,
@@ -205,56 +204,6 @@ def eval_step(
   return metrics, logits
 
 
-def representation_fn(
-    train_state: train_utils.TrainState,
-    batch: Batch,
-    *,
-    flax_model: nn.Module,
-    representation_layer: str,
-    gather_to_host: bool = True
-) -> Tuple[jnp.ndarray, jnp.ndarray, jnp.ndarray]:
-  """Feeds the inputs to the model and returns their representations.
-
-  Args:
-    train_state: TrainState, the state of training including the current
-      global_step, model_state, rng, and optimizer. The buffer of this argument
-      can be donated to the computation.
-    batch: A single batch of data from the dataset.
-    flax_model: A Flax model.
-    representation_layer: The name of the layer to use as the representation.
-    gather_to_host: Whether to gather results from all devices to the host,
-      rather than leaving them distributed.
-
-  Returns:
-    Representation learned by the model for the given inputs and the labels and
-    masks. If `gather_to_host` is True, these are collected from all hosts.
-  """
-  variables = {'params': train_state.params, **train_state.model_state}
-
-  representation_layer_parts = representation_layer.split('/')
-  filter_rep = lambda mdl, _: mdl.name == representation_layer_parts[-1]
-  _, model_state = flax_model.apply(
-      variables,
-      batch['inputs'],
-      train=False,
-      capture_intermediates=filter_rep,
-      mutable=['intermediates'],
-      debug=False)
-  if 'intermediates' not in model_state:
-    raise ValueError(f'Layer with name "{representation_layer}"'
-                     ' does not exist in your model.')
-
-  representation = model_state['intermediates']
-  for rep_layer in representation_layer_parts:
-    if rep_layer:
-      representation = representation[rep_layer]
-  representation = representation['__call__'][0]
-  if gather_to_host:
-    representation = jax.lax.all_gather(representation, 'batch')
-    batch = jax.lax.all_gather(batch, 'batch')
-  return representation, batch['label'], batch['batch_mask']
-
-
 def train(
     *,
     rng: jnp.ndarray,
@@ -280,10 +229,10 @@ def train(
     writer: CLU metrics writer instance.
 
   Returns:
-    train_sate that has the state of training (including current global_step,
-    model_state, rng, and the optimizer), train_summary and eval_summary which
-    are dict of metrics (from the last evaluation and train metric logging
-    respectively). These outputs are used for regression testing.
+    train_state that has the state of training (including current
+      global_step, model_state, rng, and the optimizer), train_summary
+      and eval_summary which are dict of metrics. These outputs are used for
+      regression testing.
   """
   lead_host = jax.process_index() == 0
   # Build the loss_fn, metrics, and flax_model.
@@ -305,8 +254,8 @@ def train(
   # If the config is already an optax-compatible config, better call directly:
   #   optimizers.get_optimizer(config.optimizer_configs, lr_fn)
   tx = optimizers.get_optimizer(optimizer_config, lr_fn, params=params)
-  # We jit this, such that the arrays that are created are created on the same
-  # device as the input is, in this case the CPU. Else they'd be on device[0].
+  # We jit this, such that the arrays that are created on the same device as the
+  # input is, in this case the CPU. Else they'd be on device[0].
   opt_state = jax.jit(tx.init, backend='cpu')(params)
 
   rng, train_rng = jax.random.split(rng)
@@ -328,19 +277,7 @@ def train(
         workdir, train_state)
   chrono.load(train_state.metadata['chrono'])
   train_state = train_state.replace(metadata={})
-  if (start_step == 0  # Which means "no" checkpoint is restored!
-      and config.get('init_from') is not None):
-    restored_model_cfg = config.init_from.get('model_config')
-    init_checkpoint_path = config.init_from.get('checkpoint_path')
-    if init_checkpoint_path is not None:
-      restored_train_state = pretrain_utils.restore_pretrained_checkpoint(
-          init_checkpoint_path, train_state, assert_exist=True)
-      # Load params from the init_model.
-      train_state = model.init_from_train_state(  # pytype: disable=attribute-error
-          train_state, restored_train_state, restored_model_cfg)
-      del restored_train_state
-
-  # Replicate the optimzier, state, and rng.
+  # Replicate the optimizer, state, and rng.
   train_state = jax_utils.replicate(train_state)
   del params  # Do not keep a copy of the initial params.
 
@@ -371,26 +308,6 @@ def train(
       # We can donate the eval_batch's buffer.
       donate_argnums=(1,),
   )
-  if 'fewshot' in config:
-    representation_fn_fewshot = functools.partial(
-        representation_fn,
-        flax_model=model.flax_model,
-        representation_layer=config.fewshot.representation_layer)
-    fewshotter = fewshot_utils.FewShotEvaluator(representation_fn_fewshot,
-                                                config.fewshot)
-
-  if 'linear_probe' in config:
-    representation_fn_linear_probe = functools.partial(
-        representation_fn,
-        flax_model=model.flax_model,
-        representation_layer=config.linear_probe.representation_layer,
-        gather_to_host=False)
-    rng, linear_probe_rng = jax.random.split(rng)
-    linear_probe = linear_probe_utils.LinearEvaluator(
-        representation_fn=representation_fn_linear_probe,
-        rng=linear_probe_rng,
-        linear_eval_config=config.linear_probe)
-
   log_eval_steps = config.get('log_eval_steps') or steps_per_epoch
   if not log_eval_steps:
     raise ValueError("'log_eval_steps' should be specified in the config.")
@@ -398,36 +315,11 @@ def train(
   max_checkpoint_keep = config.get('max_checkpoint_keep', 3)
   log_summary_steps = config.get('log_summary_steps') or log_eval_steps
 
-  def evaluate(train_state: train_utils.TrainState, step: int,
-               valid_iter: Iterator[Batch],
-               num_valid_ex: int) -> Dict[str, Any]:
-    eval_summary = {}
-    if not isinstance(valid_iter, dict):  # Only on validation set.
-      valid_iter, num_valid_ex = {'valid': valid_iter}, {'valid': num_valid_ex}
-
-    for val_name, val_iter in valid_iter.items():
-      num_ex = num_valid_ex[val_name]
-      # Ceil rounding such that we include the last incomplete batch.
-      eval_batch_size = config.get('eval_batch_size', config.batch_size)
-      total_eval_steps = int(np.ceil(num_ex / eval_batch_size))
-      steps_per_eval = config.get('steps_per_eval') or total_eval_steps
-      eval_metrics = []
-      for _ in range(steps_per_eval):
-        eval_batch = next(val_iter)
-        if dataset.meta_data['target_is_onehot']:  # Which includes multi-hot.
-          # Ignore the entries with all zero label for evaluation.
-          eval_batch['batch_mask'] *= eval_batch['label'].max(axis=-1)
-        e_metrics, _ = eval_step_pmapped(train_state, eval_batch)
-        eval_metrics.append(train_utils.unreplicate_and_get(e_metrics))
-      eval_summary.update(
-          train_utils.log_eval_summary(
-              step=step,
-              eval_metrics=eval_metrics,
-              writer=writer,
-              prefix=val_name))
-    del eval_metrics
-    writer.flush()
-    return eval_summary
+  # Ceil rounding such that we include the last incomplete batch.
+  eval_batch_size = config.get('eval_batch_size', config.batch_size)
+  total_eval_steps = int(
+      np.ceil(dataset.meta_data['num_eval_examples'] / eval_batch_size))
+  steps_per_eval = config.get('steps_per_eval') or total_eval_steps
 
   train_metrics, extra_training_logs = [], []
   train_summary, eval_summary = None, None
@@ -474,18 +366,20 @@ def train(
       # Additional training logs: learning rate:
       t_logs = jax.tree_util.tree_map(jax_utils.unreplicate, t_logs)
       extra_training_logs.append(t_logs)
-
-    # Quick indication that training is happening.
-    logging.log_first_n(logging.INFO, 'Finished training step %d.', 5, step)
     for h in hooks:
       h(step)
-
-    ############### LOG TRAIN SUMMARY ###############
+    # Below are once-in-a-while ops -> pause.
+    ###################### LOG TRAIN SUMMARY ########################
     if ((step % log_summary_steps == 1) or (step == total_steps) or
         (lead_host and chrono.warmup)):
       chrono.pause(wait_for=(train_metrics))
       if lead_host:
         chrono.tick(step, writer, write_note)
+      # train_metrics is list of a dictionaries of metrics, where the shape of
+      # the metrics[key] is [n_local_devices]. However, because metric functions
+      # have a psum, we have already summed across the whole sharded batch, and
+      # what's returned is n_local_devices copies of the same summed metric.
+      # So we do unreplicate and fetch them to host using `unreplicate_and_get`.
       train_summary = train_utils.log_train_summary(
           step=step,
           train_metrics=jax.tree_util.tree_map(train_utils.unreplicate_and_get,
@@ -500,12 +394,19 @@ def train(
     if (step % log_eval_steps == 1) or (step == total_steps):
       chrono.pause(wait_for=(train_state.params))
       with report_progress.timed('eval'):
+        eval_metrics = []
         # Sync model state across replicas.
         train_state = train_utils.sync_model_state_across_replicas(train_state)
-        eval_summary = evaluate(train_state, step, dataset.valid_iter,
-                                dataset.meta_data['num_eval_examples'])
+        for _ in range(steps_per_eval):
+          eval_batch = next(dataset.valid_iter)
+          e_metrics, _ = eval_step_pmapped(train_state, eval_batch)
+          eval_metrics.append(train_utils.unreplicate_and_get(e_metrics))
+        eval_summary = train_utils.log_eval_summary(
+            step=step, eval_metrics=eval_metrics, writer=writer)
+      writer.flush()
+      del eval_metrics
       chrono.resume()
-    ##################### CHECKPOINTING ############################
+    ##################### CHECKPOINTING ###################
     if ((step % checkpoint_steps == 1 and step > 1) or
         (step == total_steps)) and config.checkpoint:
       chrono.pause(wait_for=(train_state.params, train_state.opt_state))
@@ -513,35 +414,6 @@ def train(
         train_utils.handle_checkpointing(
             train_state, chrono, workdir, max_checkpoint_keep)
       chrono.resume()
-
-    ##################### FEWSHOT EVALUATION ############################
-    if 'fewshot' in config:
-      # Compute few-shot on-the-fly evaluation.
-      if (step % config.fewshot.log_eval_steps == 1) or (step == total_steps):
-        chrono.pause(wait_for=(train_state.params))
-        with report_progress.timed('fewshot'):
-          results = fewshotter.run_all(train_state, config.fewshot.datasets)
-          fewshotter.log_fewshot_summary(
-              writer=writer, step=step, results=results)
-          del results
-          writer.write_scalars(step, {'zz/epoch': step / steps_per_epoch})
-        writer.flush()
-        chrono.resume()  # Un-pause now.
-
-    ##################### LINEAR-PROBE EVALUATION ##########################
-    if 'linear_probe' in config:
-      if (config.linear_probe.log_eval_steps > 0 and
-          step % config.linear_probe.log_eval_steps == 1) or (step
-                                                              == total_steps):
-        chrono.pause(wait_for=(train_state.params))
-        with report_progress.timed('linear_probe'):
-          linear_probe.run_all(
-              train_state,
-              config.linear_probe.datasets,
-              writer=writer,
-              repr_step=step)
-        writer.flush()
-        chrono.resume()  # Un-pause now.
 
   # Wait until computations are done before exiting.
   train_utils.barrier_across_hosts()

@@ -33,9 +33,9 @@ from scenic.model_lib.base_models import base_model
 from scenic.projects.unloc import eval_utils as unloc_eval_utils
 from scenic.projects.unloc import optimizer_utils
 from scenic.projects.unloc import train_utils as unloc_train_utils
-from scenic.train_lib import lr_schedules
-from scenic.train_lib import optimizers
-from scenic.train_lib import train_utils
+from scenic.train_lib_deprecated import lr_schedules
+from scenic.train_lib_deprecated import optimizers
+from scenic.train_lib_deprecated import train_utils
 
 # Aliases for custom types:
 Batch = Dict[str, jnp.ndarray]

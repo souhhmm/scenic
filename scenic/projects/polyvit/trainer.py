@@ -37,10 +37,10 @@ from scenic.projects.mbt import trainer as mbt_trainer
 from scenic.projects.polyvit import polyvit_base_model
 from scenic.projects.polyvit import train_utils as polyvit_train_utils
 from scenic.projects.vivit import evaluation_lib
-from scenic.train_lib import optax as scenic_optax
-from scenic.train_lib import pretrain_utils
-from scenic.train_lib import train_utils
-from scenic.train_lib.transfer import fewshot_utils
+from scenic.train_lib_deprecated import optax as scenic_optax
+from scenic.train_lib_deprecated import pretrain_utils
+from scenic.train_lib_deprecated import train_utils
+from scenic.train_lib_deprecated.transfer import fewshot_utils
 
 
 # Aliases for custom types:

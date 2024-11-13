@@ -33,10 +33,10 @@ import numpy as np
 import optax
 from scenic.dataset_lib import dataset_utils
 from scenic.model_lib.base_models import base_model
-from scenic.train_lib import optax as scenic_optax
-from scenic.train_lib import pretrain_utils
-from scenic.train_lib import train_utils
-from scenic.train_lib.transfer import fewshot_utils
+from scenic.train_lib_deprecated import optax as scenic_optax
+from scenic.train_lib_deprecated import pretrain_utils
+from scenic.train_lib_deprecated import train_utils
+from scenic.train_lib_deprecated.transfer import fewshot_utils
 from tensorflow.io import gfile
 
 # Aliases for custom types:

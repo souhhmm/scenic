@@ -29,7 +29,7 @@ import jax.profiler
 import ml_collections
 from scenic.dataset_lib import dataset_utils
 from scenic.projects.densevoc import evaluation_utils
-from scenic.train_lib import train_utils
+from scenic.train_lib_deprecated import train_utils
 
 
 def evaluate(

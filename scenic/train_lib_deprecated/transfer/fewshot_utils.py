@@ -29,7 +29,7 @@ import jax.numpy as jnp
 import numpy as np
 from scenic.dataset_lib import dataset_utils
 from scenic.dataset_lib.big_transfer import builder as pp_builder
-from scenic.train_lib import train_utils
+from scenic.train_lib_deprecated import train_utils
 import tensorflow_datasets as tfds
 
 _BIAS_CONSTANT = 100.0

@@ -37,7 +37,7 @@ from scenic.projects.streaming_dvc import densecap_evaluator
 from scenic.projects.streaming_dvc import post_processing_utils
 from scenic.projects.streaming_dvc.modeling import auto_regressive_decode
 from scenic.projects.t5 import tokenizer as t5_tokenizer
-from scenic.train_lib import train_utils
+from scenic.train_lib_deprecated import train_utils
 
 FrozenDict = flax.core.FrozenDict
 

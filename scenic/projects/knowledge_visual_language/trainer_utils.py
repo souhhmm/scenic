@@ -34,8 +34,8 @@ from scenic.dataset_lib import dataset_utils
 from scenic.dataset_lib import datasets
 from scenic.projects.knowledge_visual_language.models import constants
 from scenic.projects.t5 import model as t5_model
-from scenic.train_lib import train_utils
-from scenic.train_lib.train_utils import TrainState
+from scenic.train_lib_deprecated import train_utils
+from scenic.train_lib_deprecated.train_utils import TrainState
 
 # Note this list must be in the exact order of the inputs required by the model.
 PyTree = Union[Mapping[str, Mapping], Any]

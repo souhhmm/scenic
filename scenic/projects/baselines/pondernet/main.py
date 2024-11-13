@@ -22,7 +22,7 @@ import ml_collections
 from scenic import app
 from scenic.projects.baselines.pondernet import pondernet_trainer
 from scenic.projects.baselines.pondernet.pondervit import pondervit
-from scenic.train_lib import train_utils
+from scenic.train_lib_deprecated import train_utils
 
 FLAGS = flags.FLAGS
 

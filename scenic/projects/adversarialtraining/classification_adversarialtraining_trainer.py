@@ -35,9 +35,9 @@ from scenic.projects.adversarialtraining import train_utils as adv_train_utils
 from scenic.projects.adversarialtraining.attacks import attack_compute
 from scenic.projects.adversarialtraining.attacks import attack_metrics
 from scenic.projects.adversarialtraining.models import models
-from scenic.train_lib import lr_schedules
-from scenic.train_lib import optimizers
-from scenic.train_lib import train_utils
+from scenic.train_lib_deprecated import lr_schedules
+from scenic.train_lib_deprecated import optimizers
+from scenic.train_lib_deprecated import train_utils
 
 
 # Aliases for custom types:

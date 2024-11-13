@@ -33,7 +33,7 @@ import numpy as np
 from scenic.dataset_lib import dataset_utils
 from scenic.projects.boundary_attention.helpers import viz_utils
 from scenic.projects.boundary_attention.types import ArrayDict, MetricFn  # pylint: disable=g-multiple-import, g-importing-member
-from scenic.train_lib import train_utils as scenic_train_utils
+from scenic.train_lib_deprecated import train_utils as scenic_train_utils
 
 
 def eval_step(

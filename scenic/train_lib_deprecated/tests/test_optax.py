@@ -18,7 +18,7 @@ from typing import Optional
 from absl.testing import absltest
 from absl.testing import parameterized
 import ml_collections
-from scenic.train_lib import optax
+from scenic.train_lib_deprecated import optax
 import tensorflow as tf
 
 

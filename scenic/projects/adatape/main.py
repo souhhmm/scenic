@@ -24,8 +24,8 @@ from scenic.projects.adatape.adatape_vit import adatape_classify_trainer
 from scenic.projects.adatape.adatape_vit import adatape_trainer
 from scenic.projects.adatape.adatape_vit import adatape_vit
 from scenic.projects.adatape.dataset import parity_dataset  # pylint: disable=unused-import
-from scenic.train_lib import train_utils
-from scenic.train_lib import trainers
+from scenic.train_lib_deprecated import train_utils
+from scenic.train_lib_deprecated import trainers
 
 FLAGS = flags.FLAGS
 

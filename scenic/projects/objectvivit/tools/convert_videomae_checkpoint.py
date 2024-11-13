@@ -50,7 +50,7 @@ import jax.numpy as jnp
 import ml_collections
 import numpy as np
 from scenic.projects.objectvivit import model
-from scenic.train_lib import train_utils
+from scenic.train_lib_deprecated import train_utils
 
 PyTree = Any
 Array = Union[np.ndarray, jnp.ndarray]

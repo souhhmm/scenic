@@ -30,7 +30,7 @@ import numpy as np
 
 from scenic.common_lib import debug_utils
 from scenic.projects.t5 import model as t5_model
-from scenic.train_lib import train_utils
+from scenic.train_lib_deprecated import train_utils
 
 TrainState = train_utils.TrainState
 FrozenDict = frozen_dict.FrozenDict

@@ -23,7 +23,7 @@ from scenic import app
 from scenic.projects.loca import loca_dataset  # pylint: disable=unused-import
 from scenic.projects.loca import ops  # pylint: disable=unused-import
 from scenic.projects.loca import trainer
-from scenic.train_lib import train_utils
+from scenic.train_lib_deprecated import train_utils
 
 FLAGS = flags.FLAGS
 

@@ -37,7 +37,7 @@ import optax
 from scenic.common_lib import debug_utils
 from scenic.dataset_lib import dataset_utils
 from scenic.dataset_lib import datasets
-from scenic.train_lib import optimizers
+from scenic.train_lib_deprecated import optimizers
 from tensorflow.io import gfile
 
 # JAX team is working on type annotation for pytree:

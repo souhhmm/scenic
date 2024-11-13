@@ -36,9 +36,9 @@ from scenic.projects.baselines.centernet import optimizer_utils
 from scenic.projects.baselines.centernet import train_utils as centernet_train_utils
 from scenic.projects.densevoc import evaluation_utils
 from scenic.projects.densevoc.modeling import densevoc_model
-from scenic.train_lib import lr_schedules
-from scenic.train_lib import optimizers
-from scenic.train_lib import train_utils
+from scenic.train_lib_deprecated import lr_schedules
+from scenic.train_lib_deprecated import optimizers
+from scenic.train_lib_deprecated import train_utils
 
 
 def train_step(

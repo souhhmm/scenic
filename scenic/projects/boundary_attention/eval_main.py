@@ -28,7 +28,7 @@ from scenic.projects.boundary_attention import eval_manager
 from scenic.projects.boundary_attention import trainer
 from scenic.projects.boundary_attention.dataset_lib import dataloader
 from scenic.projects.boundary_attention.models import all_models
-from scenic.train_lib import train_utils as scenic_train_utils
+from scenic.train_lib_deprecated import train_utils as scenic_train_utils
 
 flags.DEFINE_string('dataset_dir', '', 'Dataset directory.')
 flags.DEFINE_string('checkpoint_path', '', 'Checkpoint path.')

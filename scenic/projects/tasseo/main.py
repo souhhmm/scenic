@@ -40,8 +40,8 @@ from scenic.projects.tasseo.datasets import longtail_baseline_dataset
 from scenic.projects.tasseo.datasets import longtail_rhs_baseline_dataset
 from scenic.projects.tasseo.datasets import metaphase_sexid_dataset
 # pylint: enable=unused-import
-from scenic.train_lib import train_utils
-from scenic.train_lib import trainers
+from scenic.train_lib_deprecated import train_utils
+from scenic.train_lib_deprecated import trainers
 
 
 FLAGS = flags.FLAGS

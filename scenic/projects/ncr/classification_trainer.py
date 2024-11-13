@@ -36,7 +36,7 @@ import optax
 from scenic.dataset_lib import dataset_utils
 from scenic.model_lib.base_models import base_model
 from scenic.projects.ncr import utils
-from scenic.train_lib import train_utils
+from scenic.train_lib_deprecated import train_utils
 
 
 # Aliases for custom types:

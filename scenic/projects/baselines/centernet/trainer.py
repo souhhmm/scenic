@@ -35,7 +35,7 @@ from scenic.projects.baselines.centernet import evaluate
 from scenic.projects.baselines.centernet import optimizer_utils
 from scenic.projects.baselines.centernet import train_utils as centernet_train_utils
 from scenic.projects.baselines.centernet.modeling import centernet2
-from scenic.train_lib import train_utils
+from scenic.train_lib_deprecated import train_utils
 
 
 def train_step(

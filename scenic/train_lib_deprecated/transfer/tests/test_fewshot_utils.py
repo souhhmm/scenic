@@ -18,7 +18,7 @@ from absl.testing import absltest
 from big_vision.evaluators import fewshot as bv_fewshot
 import jax
 from jax import random
-from scenic.train_lib.transfer import fewshot_utils
+from scenic.train_lib_deprecated.transfer import fewshot_utils
 
 
 def big_vision_linear_regression(x, y, x_test, y_test, l2_reg, num_classes):

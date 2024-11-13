@@ -33,8 +33,8 @@ import ml_collections
 import numpy as np
 import optax
 from scenic.projects.baselines.centernet import optimizer_utils
-from scenic.train_lib import optimizers
-from scenic.train_lib import train_utils
+from scenic.train_lib_deprecated import optimizers
+from scenic.train_lib_deprecated import train_utils
 
 
 PyTree = train_utils.PyTree

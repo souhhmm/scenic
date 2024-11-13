@@ -33,8 +33,8 @@ from scenic.dataset_lib import dataset_utils
 from scenic.projects.streaming_dvc import evaluate
 from scenic.projects.streaming_dvc import partition_utils
 from scenic.projects.streaming_dvc import train_utils as streaming_dvc_train_utils
-from scenic.train_lib import lr_schedules
-from scenic.train_lib import train_utils
+from scenic.train_lib_deprecated import lr_schedules
+from scenic.train_lib_deprecated import train_utils
 
 
 def train_and_evaluate(

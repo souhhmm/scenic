@@ -30,8 +30,8 @@ import jax.numpy as jnp
 import ml_collections
 import numpy as np
 import optax
-from scenic.train_lib import lr_schedules
-from scenic.train_lib import optimizers
+from scenic.train_lib_deprecated import lr_schedules
+from scenic.train_lib_deprecated import optimizers
 
 
 def find_states(opt_state, cls):

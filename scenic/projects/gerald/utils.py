@@ -27,8 +27,8 @@ import ml_collections
 import numpy as np
 import optax
 from scenic.dataset_lib import dataset_utils
-from scenic.train_lib import lr_schedules
-from scenic.train_lib import optimizers as optimizer_lib
+from scenic.train_lib_deprecated import lr_schedules
+from scenic.train_lib_deprecated import optimizers as optimizer_lib
 
 from tensorflow.io import gfile
 

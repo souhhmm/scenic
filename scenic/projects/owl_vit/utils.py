@@ -21,7 +21,7 @@ from flax import core as flax_core
 import jax
 import jax.numpy as jnp
 import numpy as np
-from scenic.train_lib import train_utils
+from scenic.train_lib_deprecated import train_utils
 import scipy
 
 

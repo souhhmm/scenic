@@ -34,9 +34,9 @@ from scenic.dataset_lib import dataset_utils
 from scenic.model_lib.base_models import base_model
 from scenic.projects.svvit import classification_trainer as trainer
 from scenic.projects.svvit import metrics as sv_metric
-from scenic.train_lib import optimizers
-from scenic.train_lib import pretrain_utils
-from scenic.train_lib import train_utils
+from scenic.train_lib_deprecated import optimizers
+from scenic.train_lib_deprecated import pretrain_utils
+from scenic.train_lib_deprecated import train_utils
 import tensorflow as tf
 
 

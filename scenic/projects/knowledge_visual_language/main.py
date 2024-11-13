@@ -32,7 +32,7 @@ from scenic.projects.knowledge_visual_language.data import wiki_image_text_gener
 from scenic.projects.knowledge_visual_language.data import wit_table_dataset  # pylint: disable=unused-import
 from scenic.projects.knowledge_visual_language.models import fusion_in_decoder_soft
 from scenic.projects.knowledge_visual_language.models import knowledge_fid
-from scenic.train_lib import train_utils
+from scenic.train_lib_deprecated import train_utils
 
 FLAGS = flags.FLAGS
 

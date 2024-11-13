@@ -25,7 +25,7 @@ from scenic import app
 from scenic.projects.owl_vit import models
 from scenic.projects.owl_vit import trainer
 from scenic.projects.owl_vit.preprocessing import input_pipeline  # pylint: disable=unused-import.
-from scenic.train_lib import train_utils
+from scenic.train_lib_deprecated import train_utils
 
 FLAGS = flags.FLAGS
 

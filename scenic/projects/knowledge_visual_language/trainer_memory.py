@@ -38,10 +38,10 @@ from scenic.model_lib.base_models import base_model
 from scenic.projects.knowledge_visual_language import trainer_utils
 from scenic.projects.knowledge_visual_language.models import constants
 from scenic.projects.knowledge_visual_language.models import local_memory
-from scenic.train_lib import lr_schedules
-from scenic.train_lib import optimizers
-from scenic.train_lib import pretrain_utils
-from scenic.train_lib import train_utils
+from scenic.train_lib_deprecated import lr_schedules
+from scenic.train_lib_deprecated import optimizers
+from scenic.train_lib_deprecated import pretrain_utils
+from scenic.train_lib_deprecated import train_utils
 
 local_kb = local_memory.kb
 

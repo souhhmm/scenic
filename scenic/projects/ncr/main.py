@@ -25,7 +25,7 @@ import ml_collections
 from scenic import app
 from scenic.projects.ncr import classification_trainer
 from scenic.projects.ncr import resnet as ncr_resnet
-from scenic.train_lib import train_utils
+from scenic.train_lib_deprecated import train_utils
 
 FLAGS = flags.FLAGS
 

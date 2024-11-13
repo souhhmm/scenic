@@ -27,7 +27,7 @@ from scenic.dataset_lib.dataset_utils import Dataset
 from scenic.projects.baselines.deformable_detr.coco_eval import DeformableDetrGlobalEvaluator
 from scenic.projects.baselines.deformable_detr.coco_eval import prepare_coco_eval_dicts
 from scenic.projects.baselines.detr import train_utils as detr_train_utils
-from scenic.train_lib import train_utils
+from scenic.train_lib_deprecated import train_utils
 
 ArrayDict = Dict[str, jnp.ndarray]
 

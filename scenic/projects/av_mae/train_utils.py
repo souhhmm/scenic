@@ -26,7 +26,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from scenic.model_lib.base_models import model_utils
 from scenic.model_lib.layers import nn_ops
-from scenic.train_lib import train_utils
+from scenic.train_lib_deprecated import train_utils
 from scenic.train_lib_deprecated import train_utils as train_utils_deprecated
 
 

@@ -22,7 +22,7 @@ import jax.numpy as jnp
 import ml_collections
 import numpy as np
 from scenic.projects.vivit import model_utils as vivit_utils
-from scenic.train_lib import train_utils
+from scenic.train_lib_deprecated import train_utils
 
 PyModule = Any
 Array = Union[jnp.ndarray, np.ndarray]

@@ -33,7 +33,7 @@ from scenic.projects.streaming_dvc.io import ops  # pylint: disable=unused-impor
 from scenic.projects.streaming_dvc.modeling import model
 from scenic.projects.streaming_dvc.modeling import streaming_model
 from scenic.projects.streaming_dvc.modeling import vid2seq_model
-from scenic.train_lib import train_utils
+from scenic.train_lib_deprecated import train_utils
 
 # replace with the path to your JAVA bin location
 JRE_BIN_JAVA = path_to_jre_bin_java

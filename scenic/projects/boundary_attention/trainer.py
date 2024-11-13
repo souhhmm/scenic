@@ -33,10 +33,10 @@ from scenic.projects.boundary_attention import eval_manager
 from scenic.projects.boundary_attention import train_utils
 from scenic.projects.boundary_attention.helpers import viz_utils
 from scenic.projects.boundary_attention.types import ArrayDict, LossFn, MetricFn  # pylint: disable=g-multiple-import, g-importing-member
-from scenic.train_lib import lr_schedules
-from scenic.train_lib import optimizers
-from scenic.train_lib import pretrain_utils
-from scenic.train_lib import train_utils as scenic_train_utils
+from scenic.train_lib_deprecated import lr_schedules
+from scenic.train_lib_deprecated import optimizers
+from scenic.train_lib_deprecated import pretrain_utils
+from scenic.train_lib_deprecated import train_utils as scenic_train_utils
 
 
 # pylint: disable=unused-argument

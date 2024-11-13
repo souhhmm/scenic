@@ -26,7 +26,7 @@ import numpy as np
 import optax
 from scenic.dataset_lib import dataset_utils
 from scenic.projects.vivit import train_utils as vivit_train_utils
-from scenic.train_lib import train_utils
+from scenic.train_lib_deprecated import train_utils
 
 # Aliases for custom types:
 Array = Union[jnp.ndarray, np.ndarray]

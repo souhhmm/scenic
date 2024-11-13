@@ -26,7 +26,7 @@ import jax.profiler
 import ml_collections
 import numpy as np
 from scenic.projects.gerald import utils
-from scenic.train_lib import train_utils
+from scenic.train_lib_deprecated import train_utils
 
 
 NEG_INF = -1.0e7

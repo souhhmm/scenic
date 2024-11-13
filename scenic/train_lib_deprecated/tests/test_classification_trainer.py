@@ -31,10 +31,10 @@ from scenic.dataset_lib import datasets
 from scenic.model_lib import models
 from scenic.model_lib.base_models import classification_model
 from scenic.model_lib.base_models import multilabel_classification_model
-from scenic.train_lib import classification_trainer
-from scenic.train_lib import lr_schedules
-from scenic.train_lib import optimizers
-from scenic.train_lib import train_utils
+from scenic.train_lib_deprecated import classification_trainer
+from scenic.train_lib_deprecated import lr_schedules
+from scenic.train_lib_deprecated import optimizers
+from scenic.train_lib_deprecated import train_utils
 import tensorflow as tf
 import tensorflow_datasets as tfds
 

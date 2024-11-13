@@ -32,8 +32,8 @@ from scenic.projects.baselines.clip import model as clip_model
 from scenic.projects.unloc import eval_utils as unloc_eval_utils
 from scenic.projects.unloc import model_utils as unloc_model_utils
 from scenic.projects.vivit import model_utils as vivit_model_utils
-from scenic.train_lib import pretrain_utils
-from scenic.train_lib import train_utils
+from scenic.train_lib_deprecated import pretrain_utils
+from scenic.train_lib_deprecated import train_utils
 import scipy.ndimage
 
 # JAX team is working on type annotation for pytree:

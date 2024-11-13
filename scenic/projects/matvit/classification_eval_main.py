@@ -28,7 +28,7 @@ import jax.profiler
 import ml_collections
 import numpy as np
 from scenic.projects.matvit import matvit
-from scenic.train_lib import train_utils
+from scenic.train_lib_deprecated import train_utils
 
 Batch = Dict[str, jnp.ndarray]
 MetricFn = Callable[

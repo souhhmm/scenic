@@ -26,7 +26,7 @@ import flax
 from flax.core import frozen_dict
 from flax.training import checkpoints
 from scenic.common_lib import debug_utils
-from scenic.train_lib import train_utils
+from scenic.train_lib_deprecated import train_utils
 
 TrainState = train_utils.TrainState
 FrozenDict = flax.core.FrozenDict

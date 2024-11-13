@@ -29,7 +29,7 @@ from scenic.projects.pixel_llm import trainer
 from scenic.projects.pixel_llm.io import flexio as custom_flexio  # pylint: disable=unused-import
 from scenic.projects.pixel_llm.io import ops as pixel_llm_ops  # pylint: disable=unused-import
 from scenic.projects.pixel_llm.modeling import pixel_llm as pixel_llm_model
-from scenic.train_lib import train_utils
+from scenic.train_lib_deprecated import train_utils
 
 
 FLAGS = flags.FLAGS

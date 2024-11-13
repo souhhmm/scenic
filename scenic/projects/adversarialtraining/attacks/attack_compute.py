@@ -21,8 +21,8 @@ import ml_collections
 from scenic.projects.adversarialtraining.attacks import attack_losses
 from scenic.projects.adversarialtraining.attacks import attack_methods
 from scenic.projects.adversarialtraining.attacks import attack_transforms
-from scenic.train_lib import lr_schedules
-from scenic.train_lib import optimizers
+from scenic.train_lib_deprecated import lr_schedules
+from scenic.train_lib_deprecated import optimizers
 
 
 def typecheck(obj):

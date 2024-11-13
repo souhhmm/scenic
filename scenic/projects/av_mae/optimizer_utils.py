@@ -22,8 +22,8 @@ from absl import logging
 import flax
 import ml_collections
 import optax
-from scenic.train_lib import lr_schedules
-from scenic.train_lib import optimizers as optimizer_lib
+from scenic.train_lib_deprecated import lr_schedules
+from scenic.train_lib_deprecated import optimizers as optimizer_lib
 
 ScalarOrSchedule = Union[float, optax.Schedule]
 MaskOrFn = Optional[Union[Any, Callable[[optax.Params], Any]]]

@@ -33,9 +33,9 @@ import optax
 from scenic.dataset_lib import dataset_utils
 from scenic.projects.baselines.bert import bert_base_model
 from scenic.projects.baselines.bert import train_utils as bert_train_utils
-from scenic.train_lib import optax as scenic_optax
-from scenic.train_lib import pretrain_utils
-from scenic.train_lib import train_utils
+from scenic.train_lib_deprecated import optax as scenic_optax
+from scenic.train_lib_deprecated import pretrain_utils
+from scenic.train_lib_deprecated import train_utils
 
 LrFns = Dict[str, Callable[[jnp.ndarray], jnp.ndarray]]
 

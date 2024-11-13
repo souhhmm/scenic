@@ -34,8 +34,8 @@ import numpy as np
 import optax
 from scenic.dataset_lib import dataset_utils
 from scenic.projects.owl_vit import utils
-from scenic.train_lib import optax as scenic_optax
-from scenic.train_lib import train_utils
+from scenic.train_lib_deprecated import optax as scenic_optax
+from scenic.train_lib_deprecated import train_utils
 
 
 def get_train_step(flax_model,

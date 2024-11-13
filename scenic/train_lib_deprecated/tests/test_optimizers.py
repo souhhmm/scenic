@@ -21,8 +21,8 @@ import jax
 import jax.numpy as jnp
 import ml_collections
 import optax
-from scenic.train_lib import optimizers
-from scenic.train_lib import train_utils
+from scenic.train_lib_deprecated import optimizers
+from scenic.train_lib_deprecated import train_utils
 import tensorflow as tf
 
 

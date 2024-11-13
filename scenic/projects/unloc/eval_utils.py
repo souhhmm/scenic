@@ -31,7 +31,7 @@ from scenic.projects.unloc import activity_net_eval
 from scenic.projects.unloc import metrics as unloc_metrics
 from scenic.projects.unloc import postprocessing_utils
 from scenic.projects.vivit import evaluation_lib as vivit_evaluation_lib
-from scenic.train_lib import train_utils
+from scenic.train_lib_deprecated import train_utils
 import sklearn.metrics
 import tensorflow as tf
 

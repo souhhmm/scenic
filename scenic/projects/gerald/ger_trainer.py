@@ -35,9 +35,9 @@ from scenic.dataset_lib import dataset_utils
 from scenic.projects.gerald import ger_eval
 from scenic.projects.gerald import utils
 from scenic.projects.gerald.models import ger_model
-from scenic.train_lib import lr_schedules
-from scenic.train_lib import optimizers
-from scenic.train_lib import train_utils
+from scenic.train_lib_deprecated import lr_schedules
+from scenic.train_lib_deprecated import optimizers
+from scenic.train_lib_deprecated import train_utils
 
 
 def train_step(
