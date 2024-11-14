@@ -23,7 +23,7 @@ big_vision.train \
     --config.model.depth 50 --config.model.width 1
 """
 
-# from big_vision.configs.common_fewshot import get_fewshot_lsr
+# from scenic.big_vision.configs.common_fewshot import get_fewshot_lsr
 import ml_collections as mlc
 
 

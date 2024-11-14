@@ -16,10 +16,10 @@
 
 from unittest import mock
 
-from big_vision.evaluators.proj.image_text import retrieval
-from big_vision.pp import ops_general  # pylint: disable=unused-import
-from big_vision.pp import ops_image  # pylint: disable=unused-import
-from big_vision.pp import registry
+from scenic.big_vision.evaluators.proj.image_text import retrieval
+from scenic.big_vision.pp import ops_general  # pylint: disable=unused-import
+from scenic.big_vision.pp import ops_image  # pylint: disable=unused-import
+from scenic.big_vision.pp import registry
 import chex
 import flax.linen as nn
 import jax

@@ -14,7 +14,7 @@
 
 """Util functions for preparing dataset wrapper in scenic."""
 import functools
-from big_vision.datasets.imagenet import class_names as imagenet_class_names
+from scenic.big_vision.datasets.imagenet import class_names as imagenet_class_names
 import numpy as np
 from scenic.dataset_lib import dataset_utils
 from scenic.dataset_lib.big_transfer import registry

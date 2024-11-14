@@ -21,8 +21,8 @@ dictionary.
 
 import collections
 
-from big_vision.pp import utils
-from big_vision.pp.registry import Registry
+from scenic.big_vision.pp import utils
+from scenic.big_vision.pp.registry import Registry
 import big_vision.utils as bv_utils
 import jax
 import numpy as np

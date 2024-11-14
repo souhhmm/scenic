@@ -18,7 +18,7 @@ from functools import partial
 import os
 
 from absl.testing import parameterized
-from big_vision import utils
+from scenic.big_vision import utils
 import chex
 import flax
 import jax

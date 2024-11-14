@@ -28,7 +28,7 @@ import big_vision.evaluators.common as eval_common
 import big_vision.input_pipeline as input_pipeline
 import big_vision.optax as bv_optax
 import big_vision.pp.builder as pp_builder
-from big_vision.trainers.proj.gsam.gsam import gsam_gradient
+from scenic.big_vision.trainers.proj.gsam.gsam import gsam_gradient
 import big_vision.utils as u
 from clu import parameter_overview
 import flax

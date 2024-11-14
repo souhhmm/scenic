@@ -26,9 +26,9 @@ Used abbreviations for dimension annotations:
 
 from collections.abc import Sequence
 
-from big_vision import utils
-from big_vision.models import common
-from big_vision.models import vit
+from scenic.big_vision import utils
+from scenic.big_vision.models import common
+from scenic.big_vision.models import vit
 import flax
 import flax.linen as nn
 from flax.linen import partitioning

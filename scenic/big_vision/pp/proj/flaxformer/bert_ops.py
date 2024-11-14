@@ -14,8 +14,8 @@
 
 """BERT-related preprocessing ops (using WordPiece tokenizer)."""
 
-from big_vision.pp import utils
-from big_vision.pp.registry import Registry
+from scenic.big_vision.pp import utils
+from scenic.big_vision.pp.registry import Registry
 import tensorflow as tf
 import tensorflow_text
 

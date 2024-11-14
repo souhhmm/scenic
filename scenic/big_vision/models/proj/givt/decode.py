@@ -17,7 +17,7 @@
 import functools
 from typing import Any, Optional
 
-from big_vision.models.proj.givt import parallel_decode
+from scenic.big_vision.models.proj.givt import parallel_decode
 import flax
 from flax import linen as nn
 import jax

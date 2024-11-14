@@ -17,7 +17,7 @@ r"""PaliGemma transfer to RSVQA-LR.
 """
 
 import big_vision.configs.common as bvcc
-from big_vision.configs.proj.paligemma.transfers.common import combine_and_keep_train, combine_and_keep_eval, TOKENIZER
+from scenic.big_vision.configs.proj.paligemma.transfers.common import combine_and_keep_train, combine_and_keep_eval, TOKENIZER
 
 ONLY_NON_NUMERIC_ANSWERS = True
 # text_len: max prefix: 31, suffix: 5, prefix+sep+suffix: 32.

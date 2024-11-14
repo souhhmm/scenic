@@ -17,7 +17,7 @@
 
 import functools
 
-from big_vision.evaluators import common
+from scenic.big_vision.evaluators import common
 import big_vision.utils as u
 import jax
 import jax.numpy as jnp

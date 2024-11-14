@@ -23,7 +23,7 @@ big_vision.trainers.proj.image_text.siglip \
 """
 
 import big_vision.configs.common as bvcc
-from big_vision.configs.proj.image_text import common
+from scenic.big_vision.configs.proj.image_text import common
 from ml_collections import ConfigDict
 
 

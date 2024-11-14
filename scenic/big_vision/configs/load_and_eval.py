@@ -35,7 +35,7 @@ big_vision.train \
 """
 
 import big_vision.configs.common as bvcc
-from big_vision.configs.common_fewshot import get_fewshot_lsr
+from scenic.big_vision.configs.common_fewshot import get_fewshot_lsr
 
 
 def eval_only(config, batch_size, spec_for_init):

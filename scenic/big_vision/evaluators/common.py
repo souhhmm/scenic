@@ -22,9 +22,9 @@ import os
 from typing import Any, Callable
 
 from absl import flags
-from big_vision import input_pipeline
-from big_vision.datasets import core as ds_core
-from big_vision.pp import builder as pp_builder
+from scenic.big_vision import input_pipeline
+from scenic.big_vision.datasets import core as ds_core
+from scenic.big_vision.pp import builder as pp_builder
 import big_vision.utils as u
 import flax
 import jax

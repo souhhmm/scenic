@@ -14,7 +14,7 @@
 
 """pp ops."""
 
-from big_vision.pp.registry import Registry
+from scenic.big_vision.pp.registry import Registry
 import tensorflow as tf
 
 

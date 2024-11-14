@@ -24,9 +24,9 @@ Used abbreviations for dimension annotations:
   V: vocab size.
 """
 from typing import Sequence
-from big_vision import utils
-from big_vision.models import common
-from big_vision.models import vit
+from scenic.big_vision import utils
+from scenic.big_vision.models import common
+from scenic.big_vision.models import vit
 import einops
 import flax
 import flax.linen as nn

@@ -17,9 +17,9 @@
 from typing import Optional, Sequence
 
 from absl import logging
-from big_vision import utils
-from big_vision.models import common
-from big_vision.models import vit
+from scenic.big_vision import utils
+from scenic.big_vision.models import common
+from scenic.big_vision.models import vit
 import flax.linen as nn
 import jax
 import jax.numpy as jnp

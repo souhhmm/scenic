@@ -24,7 +24,7 @@ big_vision.trainers.proj.cappa.generative \
 """
 
 
-from big_vision.configs import common_fewshot
+from scenic.big_vision.configs import common_fewshot
 import big_vision.configs.common as bvcc
 import ml_collections
 

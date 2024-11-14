@@ -17,9 +17,9 @@
 import functools
 from typing import Mapping, Optional, Sequence, Union
 
-from big_vision import utils
-from big_vision.models import common
-from big_vision.models import vit
+from scenic.big_vision import utils
+from scenic.big_vision.models import common
+from scenic.big_vision.models import vit
 
 import einops
 import flax.linen as nn

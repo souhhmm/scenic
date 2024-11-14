@@ -17,7 +17,7 @@
 import importlib
 from typing import Optional, Any
 
-from big_vision import utils
+from scenic.big_vision import utils
 import flax.linen as nn
 import jax.numpy as jnp
 

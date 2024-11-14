@@ -20,8 +20,8 @@ However, the names of modules are made to match the old ones for easy loading.
 from typing import Optional, Sequence, Union
 
 from absl import logging
-from big_vision import utils
-from big_vision.models import common
+from scenic.big_vision import utils
+from scenic.big_vision.models import common
 import flax
 import flax.linen as nn
 import flax.training.checkpoints

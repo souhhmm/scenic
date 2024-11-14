@@ -22,7 +22,7 @@ import time
 import zipfile
 
 from absl import logging
-from big_vision.evaluators.proj.uvim import common
+from scenic.big_vision.evaluators.proj.uvim import common
 import big_vision.pp.builder as pp_builder
 import jax
 import numpy as np

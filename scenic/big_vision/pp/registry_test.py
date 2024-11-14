@@ -21,7 +21,7 @@ from __future__ import print_function
 from unittest import mock
 
 from absl.testing import absltest
-from big_vision.pp import registry
+from scenic.big_vision.pp import registry
 
 
 class RegistryTest(absltest.TestCase):

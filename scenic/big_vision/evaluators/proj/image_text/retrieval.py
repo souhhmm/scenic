@@ -37,8 +37,8 @@ import operator
 import time
 
 from absl import logging
-from big_vision import input_pipeline
-from big_vision.evaluators.proj.image_text import image_text_retrieval
+from scenic.big_vision import input_pipeline
+from scenic.big_vision.evaluators.proj.image_text import image_text_retrieval
 import big_vision.pp.builder as pp_builder
 import jax
 import jax.numpy as jnp

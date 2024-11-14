@@ -16,9 +16,9 @@
 
 import tempfile
 
-from big_vision import input_pipeline
-from big_vision.models.proj.flaxformer import bert
-from big_vision.models.proj.flaxformer import bert_test_util
+from scenic.big_vision import input_pipeline
+from scenic.big_vision.models.proj.flaxformer import bert
+from scenic.big_vision.models.proj.flaxformer import bert_test_util
 import big_vision.pp.builder as pp_builder
 import big_vision.pp.ops_general  # pylint: disable=unused-import
 import big_vision.pp.proj.flaxformer.bert_ops  # pylint: disable=unused-import

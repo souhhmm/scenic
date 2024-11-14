@@ -16,7 +16,7 @@
 
 from absl import logging
 
-from big_vision.pp.registry import Registry
+from scenic.big_vision.pp.registry import Registry
 import big_vision.utils as u
 import flax.linen as nn
 import jax

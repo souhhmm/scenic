@@ -16,9 +16,9 @@
 
 from typing import Any
 
-from big_vision import utils
-from big_vision.models import common
-from big_vision.models import vit
+from scenic.big_vision import utils
+from scenic.big_vision.models import common
+from scenic.big_vision.models import vit
 import flax.linen as nn
 import flax.training.checkpoints
 import numpy as np

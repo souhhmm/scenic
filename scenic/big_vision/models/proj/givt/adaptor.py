@@ -20,9 +20,9 @@ https://github.com/jhjacobsen/pytorch-i-revnet/blob/master/models/iRevNet.py
 
 from typing import Any, Optional, Sequence
 
-from big_vision import utils
-from big_vision.models import common
-from big_vision.models.proj.givt import cnn
+from scenic.big_vision import utils
+from scenic.big_vision.models import common
+from scenic.big_vision.models.proj.givt import cnn
 import einops
 import flax.core
 import flax.linen as nn

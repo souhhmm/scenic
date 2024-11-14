@@ -30,7 +30,7 @@ from typing import Mapping
 
 from absl import flags
 from absl import logging
-from big_vision.pp import registry as pp_registry
+from scenic.big_vision.pp import registry as pp_registry
 import einops
 import flax
 import flax.jax_utils as flax_utils

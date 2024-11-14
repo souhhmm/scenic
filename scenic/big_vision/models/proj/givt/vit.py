@@ -16,10 +16,10 @@
 
 from typing import Optional, Sequence, Mapping, Any
 
-from big_vision import utils
-from big_vision.models import common
-from big_vision.models import vit
-from big_vision.models.proj.givt import vae
+from scenic.big_vision import utils
+from scenic.big_vision.models import common
+from scenic.big_vision.models import vit
+from scenic.big_vision.models.proj.givt import vae
 
 import einops
 import flax.linen as nn

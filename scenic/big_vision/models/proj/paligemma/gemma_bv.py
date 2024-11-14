@@ -14,7 +14,7 @@
 
 """Gemma wrapper to make it work for us."""
 
-from big_vision.models.ppp import gemma
+from scenic.big_vision.models.ppp import gemma
 import flax.linen as nn
 import jax
 import jax.numpy as jnp

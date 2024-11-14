@@ -19,8 +19,8 @@ import functools
 from typing import Any, Callable, Dict, Optional, Tuple, Union, Sequence
 
 from absl import logging
-from big_vision.models import bit
-from big_vision.models import vit
+from scenic.big_vision.models import bit
+from scenic.big_vision.models import vit
 import flax
 import flax.linen as nn
 import jax

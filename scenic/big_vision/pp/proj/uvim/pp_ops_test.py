@@ -15,7 +15,7 @@
 """Tests for pp_ops."""
 import copy
 
-from big_vision.pp.proj.uvim import pp_ops as pp
+from scenic.big_vision.pp.proj.uvim import pp_ops as pp
 import numpy as np
 import tensorflow as tf
 

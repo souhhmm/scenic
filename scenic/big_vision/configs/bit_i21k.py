@@ -20,7 +20,7 @@ available publicly in TFDS. We intend to add the dataset to public TFDS soon,
 and this config will then be runnable.
 """
 
-from big_vision.configs.common_fewshot import get_fewshot_lsr
+from scenic.big_vision.configs.common_fewshot import get_fewshot_lsr
 import ml_collections as mlc
 
 

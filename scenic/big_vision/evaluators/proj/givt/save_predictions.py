@@ -21,8 +21,8 @@ import os
 
 from absl import flags
 from absl import logging
-from big_vision import input_pipeline
-from big_vision.datasets import core as ds_core
+from scenic.big_vision import input_pipeline
+from scenic.big_vision.datasets import core as ds_core
 import big_vision.pp.builder as pp_builder
 import big_vision.utils as u
 import jax

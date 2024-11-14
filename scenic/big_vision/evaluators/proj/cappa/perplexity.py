@@ -13,7 +13,7 @@
 # limitations under the License.
 
 """Evaluator for perplexity of a model."""
-from big_vision.evaluators import mean
+from scenic.big_vision.evaluators import mean
 import big_vision.utils as u
 import jax.numpy as jnp
 

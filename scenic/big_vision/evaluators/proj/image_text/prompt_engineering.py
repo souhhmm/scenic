@@ -19,8 +19,8 @@ import string
 from typing import Sequence
 
 from absl import logging
-from big_vision.datasets.imagenet import class_names as imagenet_class_names
-from big_vision.evaluators.proj.image_text import prompt_engineering_constants
+from scenic.big_vision.datasets.imagenet import class_names as imagenet_class_names
+from scenic.big_vision.evaluators.proj.image_text import prompt_engineering_constants
 import tensorflow_datasets as tfds
 
 

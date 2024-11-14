@@ -18,7 +18,7 @@ import importlib
 from typing import Protocol
 
 from absl import logging
-from big_vision.pp import registry
+from scenic.big_vision.pp import registry
 import big_vision.utils as u
 import numpy as np
 

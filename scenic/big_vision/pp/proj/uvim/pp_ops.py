@@ -13,8 +13,8 @@
 # limitations under the License.
 
 """Preprocessing ops."""
-from big_vision.pp import utils
-from big_vision.pp.registry import Registry
+from scenic.big_vision.pp import utils
+from scenic.big_vision.pp.registry import Registry
 import numpy as np
 import tensorflow as tf
 

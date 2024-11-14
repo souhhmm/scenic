@@ -18,7 +18,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from big_vision.pp import utils
+from scenic.big_vision.pp import utils
 import tensorflow.compat.v1 as tf
 
 

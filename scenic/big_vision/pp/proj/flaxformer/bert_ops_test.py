@@ -16,10 +16,10 @@
 
 import tempfile
 
-from big_vision import input_pipeline
+from scenic.big_vision import input_pipeline
 import big_vision.pp.builder as pp_builder
 import big_vision.pp.ops_general  # pylint: disable=unused-import
-from big_vision.pp.proj.flaxformer import bert_ops  # pylint: disable=unused-import
+from scenic.big_vision.pp.proj.flaxformer import bert_ops  # pylint: disable=unused-import
 import tensorflow as tf
 
 

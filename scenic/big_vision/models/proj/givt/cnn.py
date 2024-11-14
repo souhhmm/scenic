@@ -22,9 +22,9 @@ import functools
 import math
 from typing import Any, Sequence
 
-from big_vision import utils
-from big_vision.models import common
-from big_vision.models.proj.givt import vae
+from scenic.big_vision import utils
+from scenic.big_vision.models import common
+from scenic.big_vision.models.proj.givt import vae
 
 import einops
 import flax.linen as nn

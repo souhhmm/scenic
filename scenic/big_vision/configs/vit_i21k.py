@@ -24,7 +24,7 @@ implemented. This was not beneficial for ImageNet-21k pre-trainning.
 """
 
 import big_vision.configs.common as bvcc
-from big_vision.configs.common_fewshot import get_fewshot_lsr
+from scenic.big_vision.configs.common_fewshot import get_fewshot_lsr
 import ml_collections as mlc
 
 MIXUP_DEF = {

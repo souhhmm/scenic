@@ -33,7 +33,7 @@ import dataclasses
 from typing import Literal
 
 from absl import logging
-from big_vision.models.proj.givt import givt
+from scenic.big_vision.models.proj.givt import givt
 import distrax
 import flax
 import jax

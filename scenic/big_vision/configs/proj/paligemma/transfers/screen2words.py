@@ -17,7 +17,7 @@ r"""PaliGemma transfer to Screen2words.
 """
 
 import big_vision.configs.common as bvcc
-from big_vision.configs.proj.paligemma.transfers.common import combine_and_keep_train, combine_and_keep_eval, TOKENIZER
+from scenic.big_vision.configs.proj.paligemma.transfers.common import combine_and_keep_train, combine_and_keep_eval, TOKENIZER
 
 
 def training_data(res, text_len=24, final_split=False):

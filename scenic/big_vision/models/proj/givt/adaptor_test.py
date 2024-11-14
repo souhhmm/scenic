@@ -14,7 +14,7 @@
 
 """Tests for the IRevNet adaptor."""
 
-from big_vision.models.proj.givt import adaptor
+from scenic.big_vision.models.proj.givt import adaptor
 import jax
 from jax import random
 import jax.numpy as jnp

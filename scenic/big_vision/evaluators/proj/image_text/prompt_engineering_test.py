@@ -15,7 +15,7 @@
 """Tests for prompt_engineering."""
 
 from absl.testing import absltest
-from big_vision.evaluators.proj.image_text import prompt_engineering
+from scenic.big_vision.evaluators.proj.image_text import prompt_engineering
 
 
 class PromptEngineeringTest(absltest.TestCase):

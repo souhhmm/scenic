@@ -32,7 +32,7 @@ Doc locating the variable initializers in the original code and validating them:
 """
 
 
-from big_vision.models import common
+from scenic.big_vision.models import common
 import big_vision.utils as u
 import einops
 import flax

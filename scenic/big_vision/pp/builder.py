@@ -15,7 +15,7 @@
 """Preprocessing builder."""
 
 from absl import logging
-from big_vision.pp import registry
+from scenic.big_vision.pp import registry
 import tensorflow as tf
 
 

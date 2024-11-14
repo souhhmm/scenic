@@ -19,7 +19,7 @@ However, the names of modules are made to match the old ones for easy loading.
 
 from typing import Optional, Sequence, Union
 
-from big_vision.models import vit as bv_vit
+from scenic.big_vision.models import vit as bv_vit
 import flax.linen as nn
 import jax
 import jax.numpy as jnp

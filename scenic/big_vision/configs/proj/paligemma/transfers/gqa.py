@@ -17,7 +17,7 @@ r"""PaliGemma transfer to GQA (https://arxiv.org/abs/1902.09506).
 """
 
 import big_vision.configs.common as bvcc
-from big_vision.configs.proj.paligemma.transfers.common import combine_and_keep_train, combine_and_keep_eval, TOKENIZER
+from scenic.big_vision.configs.proj.paligemma.transfers.common import combine_and_keep_train, combine_and_keep_eval, TOKENIZER
 
 XGQA_LANGUAGES = ('bn', 'de', 'en', 'id', 'ko', 'pt', 'ru', 'zh')
 

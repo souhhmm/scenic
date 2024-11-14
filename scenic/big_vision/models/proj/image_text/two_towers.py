@@ -18,7 +18,7 @@ import importlib
 from typing import Any, Optional, Tuple, Union
 from absl import logging
 
-from big_vision import utils
+from scenic.big_vision import utils
 import flax.linen as nn
 import jax.numpy as jnp
 

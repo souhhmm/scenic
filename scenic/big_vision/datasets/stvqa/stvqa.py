@@ -47,7 +47,7 @@ Recommended training splits:
 import json
 import os
 
-from big_vision.datasets.stvqa import val_ids
+from scenic.big_vision.datasets.stvqa import val_ids
 import numpy as np
 import tensorflow_datasets as tfds
 

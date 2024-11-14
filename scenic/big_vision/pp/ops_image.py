@@ -22,8 +22,8 @@ The key named "image" is commonly used for the image, and is a 3D tensor of
 shape (height x width x channels).
 """
 
-from big_vision.pp import utils
-from big_vision.pp.registry import Registry
+from scenic.big_vision.pp import utils
+from scenic.big_vision.pp.registry import Registry
 
 import tensorflow as tf
 

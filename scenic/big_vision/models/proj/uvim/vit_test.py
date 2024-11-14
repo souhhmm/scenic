@@ -15,7 +15,7 @@
 """Tests for vit vqvae model."""
 from absl.testing import absltest
 
-from big_vision.models.proj.uvim import vit
+from scenic.big_vision.models.proj.uvim import vit
 import jax
 import jax.numpy as jnp
 import ml_collections

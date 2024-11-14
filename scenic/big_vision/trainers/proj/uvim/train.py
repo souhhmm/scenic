@@ -22,7 +22,7 @@ import os
 from absl import app
 from absl import flags
 from absl import logging
-from big_vision import input_pipeline
+from scenic.big_vision import input_pipeline
 import big_vision.datasets.core as ds_core
 import big_vision.evaluators.common as eval_common
 import big_vision.models.proj.uvim.decode as decode

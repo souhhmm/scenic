@@ -15,7 +15,7 @@
 """Evaluator for the classfication task."""
 from functools import partial, lru_cache
 
-from big_vision import input_pipeline
+from scenic.big_vision import input_pipeline
 import big_vision.datasets.core as ds_core
 import big_vision.pp.builder as pp_builder
 import big_vision.utils as u

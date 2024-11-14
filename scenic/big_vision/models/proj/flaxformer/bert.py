@@ -18,8 +18,8 @@ import dataclasses
 from typing import Optional
 
 from absl import logging
-from big_vision import utils
-from big_vision.models import common
+from scenic.big_vision import utils
+from scenic.big_vision.models import common
 import flax
 import flax.linen as nn
 import jax.numpy as jnp

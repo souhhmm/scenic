@@ -21,9 +21,9 @@ import functools
 import re
 from typing import Optional, Sequence, Union
 
-from big_vision import utils as u
-from big_vision.models import bit
-from big_vision.models import common
+from scenic.big_vision import utils as u
+from scenic.big_vision.models import bit
+from scenic.big_vision.models import common
 import flax.linen as nn
 import jax.numpy as jnp
 

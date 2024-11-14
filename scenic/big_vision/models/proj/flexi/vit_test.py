@@ -15,7 +15,7 @@
 """Tests for the FlexiViT model."""
 
 from absl.testing import absltest
-from big_vision.models.proj.flexi import vit
+from scenic.big_vision.models.proj.flexi import vit
 import jax
 from jax import config
 from jax import numpy as jnp

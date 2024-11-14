@@ -15,7 +15,7 @@
 """Evaluator for perplexity of a model."""
 import functools
 
-from big_vision.evaluators import mean
+from scenic.big_vision.evaluators import mean
 import big_vision.utils as u
 import jax.numpy as jnp
 

@@ -17,7 +17,7 @@ r"""PaliGemma transfer to COCO-35L captions.
 """
 
 import big_vision.configs.common as bvcc
-from big_vision.configs.proj.paligemma.transfers.common import combine_and_keep_train, combine_and_keep_eval, TOKENIZER
+from scenic.big_vision.configs.proj.paligemma.transfers.common import combine_and_keep_train, combine_and_keep_eval, TOKENIZER
 
 LANGUAGES = (
     'ar', 'bn', 'cs', 'da', 'de', 'el', 'en', 'es', 'fa', 'fi', 'fil', 'fr',

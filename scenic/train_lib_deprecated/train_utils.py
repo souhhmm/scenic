@@ -1097,7 +1097,7 @@ def accumulate_gradients(
 class Chrono:
   """Measures time and reports progress.
 
-  This is a modified fork of Chrono class from big_vision codebase:
+  This is a modified fork of Chrono class from scenic.big_vision codebase:
   https://github.com/google-research/big_vision/blob/main/big_vision/utils.py
 
   Some concepts:

@@ -17,7 +17,7 @@
 import collections
 import functools
 
-from big_vision.pp import registry
+from scenic.big_vision.pp import registry
 import big_vision.utils as u
 import einops
 import jax

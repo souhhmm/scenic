@@ -154,7 +154,7 @@ def get_config():
   # Additional regularization
   config.model.stochastic_droplayer_rate = 0.3
 
-  # Use ImageNet-21k-initialised model from big_vision checkpoint
+  # Use ImageNet-21k-initialised model from scenic.big_vision checkpoint
   config.init_from = ml_collections.ConfigDict()
   config.init_from.model_config = None
   # Download pretrained ImageNet checkpoints from here:

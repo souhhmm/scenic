@@ -15,7 +15,7 @@
 """Tests for GIVT model."""
 
 from absl.testing import parameterized
-from big_vision.models.proj.givt import givt
+from scenic.big_vision.models.proj.givt import givt
 import jax
 import jax.numpy as jnp
 import numpy as np

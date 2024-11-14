@@ -19,11 +19,11 @@ import functools
 import time
 
 from absl import logging
-from big_vision import input_pipeline
-from big_vision import utils
-from big_vision.evaluators.proj.image_text import prompt_engineering
-from big_vision.pp import ops_general  # pylint: disable=unused-import
-from big_vision.pp import ops_image  # pylint: disable=unused-import
+from scenic.big_vision import input_pipeline
+from scenic.big_vision import utils
+from scenic.big_vision.evaluators.proj.image_text import prompt_engineering
+from scenic.big_vision.pp import ops_general  # pylint: disable=unused-import
+from scenic.big_vision.pp import ops_image  # pylint: disable=unused-import
 import big_vision.pp.builder as pp_builder
 import jax
 import jax.numpy as jnp

@@ -26,7 +26,7 @@ big_vision.train \
     --workdir gs://[your_bucket]/big_vision/`date '+%m-%d_%H%M'`
 
 """
-from big_vision.configs.common_fewshot import get_fewshot_lsr
+from scenic.big_vision.configs.common_fewshot import get_fewshot_lsr
 import ml_collections as mlc
 
 

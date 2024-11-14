@@ -17,9 +17,9 @@
 import functools
 import string
 
-from big_vision.pp import ops_text
-from big_vision.pp import utils
-from big_vision.pp.registry import Registry
+from scenic.big_vision.pp import ops_text
+from scenic.big_vision.pp import utils
+from scenic.big_vision.pp.registry import Registry
 import big_vision.pp.tokenizer as bv_tok
 import numpy as np
 import tensorflow as tf

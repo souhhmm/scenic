@@ -13,8 +13,8 @@
 # limitations under the License.
 
 from absl.testing import parameterized
-from big_vision.models.proj.givt import givt
-from big_vision.models.proj.givt import parallel_decode
+from scenic.big_vision.models.proj.givt import givt
+from scenic.big_vision.models.proj.givt import parallel_decode
 import chex
 import jax
 import jax.numpy as jnp

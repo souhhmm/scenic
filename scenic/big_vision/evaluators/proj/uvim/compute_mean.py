@@ -16,9 +16,9 @@
 import functools
 from typing import Mapping
 
-from big_vision import input_pipeline
-from big_vision.datasets import core as ds_core
-from big_vision.pp import builder as pp_builder
+from scenic.big_vision import input_pipeline
+from scenic.big_vision.datasets import core as ds_core
+from scenic.big_vision.pp import builder as pp_builder
 
 import jax
 import jax.numpy as jnp

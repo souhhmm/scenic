@@ -20,8 +20,8 @@ import re
 from typing import Any, Dict, List, Mapping, Optional, Tuple, Union
 
 from absl import logging
-from big_vision import utils as bv_utils
-from big_vision.models import vit as vit_model
+from scenic.big_vision import utils as bv_utils
+from scenic.big_vision.models import vit as vit_model
 from clu import metric_writers
 import flax
 from flax import jax_utils

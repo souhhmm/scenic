@@ -19,9 +19,9 @@ Here we input the image as well as all the tokenized labels to compute their
 perplexity and select the one with minimum loss as the prediction.
 """
 import functools
-from big_vision.datasets.imagenet import class_names as imagenet_class_names
-from big_vision.evaluators import mean
-from big_vision.pp import builder as pp_builder
+from scenic.big_vision.datasets.imagenet import class_names as imagenet_class_names
+from scenic.big_vision.evaluators import mean
+from scenic.big_vision.pp import builder as pp_builder
 import jax.numpy as jnp
 import numpy as np
 

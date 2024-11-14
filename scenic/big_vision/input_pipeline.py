@@ -20,7 +20,7 @@ import math
 import multiprocessing.pool
 
 from absl import logging
-from big_vision.datasets import sequence_packing
+from scenic.big_vision.datasets import sequence_packing
 import big_vision.datasets.core as ds_core
 import big_vision.pp.builder as pp_builder
 import big_vision.utils as u

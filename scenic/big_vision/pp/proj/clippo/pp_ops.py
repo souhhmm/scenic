@@ -15,7 +15,7 @@
 """Preprocessing functions for CLIP with Pixels Only (CLIPPO)."""
 from absl import logging
 from  big_vision.pp import utils
-from big_vision.pp.registry import Registry
+from scenic.big_vision.pp.registry import Registry
 import numpy as np
 import tensorflow as tf
 

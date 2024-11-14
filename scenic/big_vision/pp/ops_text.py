@@ -24,11 +24,11 @@ import functools
 import importlib
 
 from absl import logging
-from big_vision.datasets.imagenet import class_names as imagenet_class_names
-from big_vision.pp import ops_general
-from big_vision.pp import tokenizer as bv_tok
-from big_vision.pp import utils
-from big_vision.pp.registry import Registry
+from scenic.big_vision.datasets.imagenet import class_names as imagenet_class_names
+from scenic.big_vision.pp import ops_general
+from scenic.big_vision.pp import tokenizer as bv_tok
+from scenic.big_vision.pp import utils
+from scenic.big_vision.pp.registry import Registry
 import tensorflow as tf
 
 from tensorflow.io import gfile

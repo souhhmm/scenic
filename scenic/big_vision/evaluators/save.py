@@ -18,11 +18,11 @@ import functools
 from absl import flags
 from absl import logging
 
-from big_vision import input_pipeline
-from big_vision import optax as bv_optax
-from big_vision import utils
-from big_vision.datasets import core as ds_core
-from big_vision.pp import builder as pp_builder
+from scenic.big_vision import input_pipeline
+from scenic.big_vision import optax as bv_optax
+from scenic.big_vision import utils
+from scenic.big_vision.datasets import core as ds_core
+from scenic.big_vision.pp import builder as pp_builder
 
 import jax
 import numpy as np

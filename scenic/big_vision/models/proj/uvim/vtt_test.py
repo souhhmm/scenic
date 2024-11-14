@@ -15,7 +15,7 @@
 """Tests for vision-text-transformer."""
 from absl.testing import absltest
 
-from big_vision.models.proj.uvim import vtt
+from scenic.big_vision.models.proj.uvim import vtt
 import jax
 import jax.numpy as jnp
 import ml_collections

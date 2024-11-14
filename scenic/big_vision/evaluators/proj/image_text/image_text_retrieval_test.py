@@ -17,7 +17,7 @@ from typing import Mapping
 
 from absl.testing import absltest
 from absl.testing import parameterized
-from big_vision.evaluators.proj.image_text import image_text_retrieval
+from scenic.big_vision.evaluators.proj.image_text import image_text_retrieval
 import numpy as np
 
 

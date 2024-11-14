@@ -18,7 +18,7 @@ import copy
 
 from absl.testing import parameterized
 import big_vision.pp.ops_text as pp
-from big_vision.pp.registry import Registry
+from scenic.big_vision.pp.registry import Registry
 import numpy as np
 import tensorflow as tf
 

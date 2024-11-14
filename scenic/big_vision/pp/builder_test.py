@@ -18,9 +18,9 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from big_vision.pp import builder
-from big_vision.pp import ops_general  # pylint: disable=unused-import
-from big_vision.pp import ops_image  # pylint: disable=unused-import
+from scenic.big_vision.pp import builder
+from scenic.big_vision.pp import ops_general  # pylint: disable=unused-import
+from scenic.big_vision.pp import ops_image  # pylint: disable=unused-import
 import numpy as np
 import tensorflow.compat.v1 as tf
 

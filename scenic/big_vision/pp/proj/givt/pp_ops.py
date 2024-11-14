@@ -14,8 +14,8 @@
 
 """GIVT-specific preprocessing ops."""
 
-from big_vision.pp import registry
-from big_vision.pp import utils
+from scenic.big_vision.pp import registry
+from scenic.big_vision.pp import utils
 import tensorflow as tf
 
 

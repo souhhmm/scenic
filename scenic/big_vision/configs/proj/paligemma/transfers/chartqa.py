@@ -17,7 +17,7 @@ r"""PaliGemma transfer to chartqa.
 """
 
 import big_vision.configs.common as bvcc
-from big_vision.configs.proj.paligemma.transfers.common import combine_and_keep_train, combine_and_keep_eval, TOKENIZER
+from scenic.big_vision.configs.proj.paligemma.transfers.common import combine_and_keep_train, combine_and_keep_eval, TOKENIZER
 
 _DATASETS = ('chartqa/human', 'chartqa/augmented')
 # We use the true dataset sizes from https://arxiv.org/pdf/2203.10244.pdf.

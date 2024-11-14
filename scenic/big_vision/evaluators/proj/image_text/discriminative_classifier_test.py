@@ -16,10 +16,10 @@
 
 from unittest import mock
 
-from big_vision.evaluators.proj.image_text import discriminative_classifier
-from big_vision.pp import ops_general  # pylint: disable=unused-import
-from big_vision.pp import ops_image  # pylint: disable=unused-import
-from big_vision.pp.registry import Registry
+from scenic.big_vision.evaluators.proj.image_text import discriminative_classifier
+from scenic.big_vision.pp import ops_general  # pylint: disable=unused-import
+from scenic.big_vision.pp import ops_image  # pylint: disable=unused-import
+from scenic.big_vision.pp.registry import Registry
 import flax.linen as nn
 import jax
 import jax.numpy as jnp

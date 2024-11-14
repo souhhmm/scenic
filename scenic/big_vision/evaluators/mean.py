@@ -21,7 +21,7 @@ This evaluator can be used in two ways:
 from functools import partial
 from typing import Mapping
 
-from big_vision.evaluators import common
+from scenic.big_vision.evaluators import common
 
 import jax
 import jax.numpy as jnp

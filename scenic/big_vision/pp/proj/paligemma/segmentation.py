@@ -16,7 +16,7 @@
 
 import functools
 
-from big_vision.pp import registry
+from scenic.big_vision.pp import registry
 import numpy as np
 import tensorflow as tf
 

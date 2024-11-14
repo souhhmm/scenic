@@ -27,9 +27,9 @@ import itertools
 from typing import Literal, Optional, Sequence, Any, Mapping
 
 from absl import logging
-from big_vision import utils
-from big_vision.models import common
-from big_vision.models import vit
+from scenic.big_vision import utils
+from scenic.big_vision.models import common
+from scenic.big_vision.models import vit
 import distrax
 import einops
 import flax.linen as nn
