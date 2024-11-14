@@ -20,7 +20,7 @@ import re
 from typing import Any, Dict, Mapping, List, Optional, Union
 
 from absl import logging
-from big_vision import utils
+from scenic.big_vision import utils
 import flax
 from flax.training import checkpoints
 import numpy as np
