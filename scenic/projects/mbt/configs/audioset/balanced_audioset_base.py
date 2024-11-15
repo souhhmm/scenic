@@ -22,7 +22,7 @@ import ml_collections
 
 # The size of the AudioSet dataset changes as videos are removed from YouTube.
 # Update this accordingly.
-AUDIOSET_TRAIN_SIZE = 20361
+AUDIOSET_TRAIN_SIZE = 22176
 
 
 def get_config():
@@ -38,9 +38,9 @@ def get_config():
       'test': 'eval.se.melspec.tfrecord.sst@1024',
   }
   config.dataset_configs.examples_per_subset = {
-      'train': 20361,
-      'validation': 18589,
-      'test': 18589
+      'train': 22176,
+      'validation': 20383,
+      'test': 20383
   }
   config.dataset_configs.num_classes = 527
   config.data_dtype_str = 'float32'
@@ -160,7 +160,7 @@ def get_config():
   # Download pretrained ImageNet checkpoints from here:
   # https://github.com/google-research/scenic/tree/main/scenic/projects/baselines (checkpoint_format = 'scenic')  pylint: disable=line-too-long
   # https://github.com/google-research/vision_transformer (checkpoint_format = 'big_vision')  pylint: disable=line-too-long
-  config.init_from.checkpoint_path = 'path_to_checkpoint_of_vit_b_16'
+  config.init_from.checkpoint_path = '/content/ViT_B_32_ImageNet21k'
   config.init_from.checkpoint_format = 'scenic'
   config.init_from.model_config = ml_collections.ConfigDict()
   config.init_from.model_config.model = ml_collections.ConfigDict()
