@@ -380,8 +380,7 @@ def get_dataset(
   logging.info('device_count: %d', device_count)
   logging.info('num_hosts : %d', jax.process_count())
   logging.info('host_id : %d', jax.process_index())
-
-  dataset_name = dataset_name or config.dataset_name
+  dataset_name = dataset_name or config.get('dataset_name', None)
   dataset_builder = datasets.get_dataset(dataset_name)
 
   batch_size = config.batch_size
