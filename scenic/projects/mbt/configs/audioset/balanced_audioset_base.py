@@ -29,6 +29,7 @@ def get_config():
   """Returns the base experiment configuration."""
   config = ml_collections.ConfigDict()
   config.experiment_name = 'mbt_balanced_audioset_classification'
+  config.dataset_name = 'video_tfrecord_dataset'
   config.dataset_configs = ml_collections.ConfigDict()
   
   # Dataset.
