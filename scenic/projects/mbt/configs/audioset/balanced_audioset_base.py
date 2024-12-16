@@ -22,7 +22,7 @@ import ml_collections
 
 # The size of the AudioSet dataset changes as videos are removed from YouTube.
 # Update this accordingly.
-AUDIOSET_TRAIN_SIZE = 22176
+AUDIOSET_TRAIN_SIZE = 20
 
 
 def get_config():
@@ -31,16 +31,16 @@ def get_config():
   config.experiment_name = 'mbt_balanced_audioset_classification'
 
   # Dataset.
-  config.dataset_configs.base_dir = '/path/to/dataset'
+  config.dataset_configs.base_dir = 'to_dataset/tfrecords'
   config.dataset_configs.tables = {
-      'train': 'balanced_train.se.melspec.tfrecord.sst@1024',
-      'validation': 'eval.se.melspec.tfrecord.sst@1024',
-      'test': 'eval.se.melspec.tfrecord.sst@1024',
+      'train': 'balanced_train.se.melspec_test.tfrecord',
+      'validation': 'balanced_train.se.melspec_test.tfrecord',
+      'test': 'balanced_train.se.melspec_test.tfrecord',
   }
   config.dataset_configs.examples_per_subset = {
-      'train': 22176,
-      'validation': 20383,
-      'test': 20383
+      'train': 20,
+      'validation': 20,
+      'test': 20
   }
   config.dataset_configs.num_classes = 527
   config.data_dtype_str = 'float32'
@@ -72,8 +72,8 @@ def get_config():
   config.dataset_configs.log_test_epochs = 4
   # The effective batch size per host when testing is
   # num_test_clips * test_batch_size
-  config.dataset_configs.num_test_clips = 4
-  config.dataset_configs.test_batch_size = 8  # Needs to be num_local_devices
+  config.dataset_configs.num_test_clips = 2
+  config.dataset_configs.test_batch_size = 2
   config.multicrop_clips_per_device = 2
   # Leaving this empty means that a full test is done each time.
   # About 4200 / 4 = 1050 steps on a 4-host setting (ie 4x4 TPU)
@@ -142,8 +142,8 @@ def get_config():
   config.l2_decay_factor = 0
   config.max_grad_norm = 1
   config.label_smoothing = 0.3
-  config.num_training_epochs = 50
-  config.batch_size = 64
+  config.num_training_epochs = 10
+  config.batch_size = 4
   config.rng_seed = 0
   # This does Mixup in the train loop. This is fast. But make sure that device
   # batch size is more than 1. On a 4x4 TPU, this means that your batch size
@@ -175,7 +175,7 @@ def get_config():
   config.lr_configs = ml_collections.ConfigDict()
   config.lr_configs.learning_rate_schedule = 'compound'
   config.lr_configs.factors = 'constant * cosine_decay * linear_warmup'
-  config.lr_configs.warmup_steps = 2.5 * steps_per_epoch
+  config.lr_configs.warmup_steps = steps_per_epoch
   config.lr_configs.steps_per_cycle = total_steps
   config.lr_configs.base_learning_rate = 5e-1
 
@@ -184,7 +184,7 @@ def get_config():
   config.checkpoint = True  # Do checkpointing.
   config.debug_train = False  # Debug mode during training.
   config.debug_eval = False  # Debug mode during eval.
-  config.checkpoint_steps = 500  # Checkpoint more frequently than a val epoch.
+  config.checkpoint_steps = 10
   return config
 
 
