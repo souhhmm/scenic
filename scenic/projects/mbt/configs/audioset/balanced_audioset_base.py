@@ -30,7 +30,6 @@ def get_config():
   config = ml_collections.ConfigDict()
   config.experiment_name = 'mbt_balanced_audioset_classification'
   config.dataset_configs = ml_collections.ConfigDict()
-  config.dataset_name = None
   
   # Dataset.
   config.dataset_configs.base_dir = '../preprocess/to_dataset/tfrecords'
