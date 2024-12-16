@@ -31,7 +31,7 @@ def get_config():
   config.experiment_name = 'mbt_balanced_audioset_classification'
 
   # Dataset.
-  config.dataset_configs.base_dir = 'to_dataset/tfrecords'
+  config.dataset_configs.base_dir = '../preprocess/to_dataset/tfrecords'
   config.dataset_configs.tables = {
       'train': 'balanced_train.se.melspec_test.tfrecord',
       'validation': 'balanced_train.se.melspec_test.tfrecord',
